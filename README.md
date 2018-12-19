@@ -1,8 +1,9 @@
 ## Project 1 Summary
 
-This Project demonstrates how to use the GPIO Pins for Input and Output. Using bit manipulation students will implement the fillowing:
-	* Input: Read button presses.
-	* Output: Assign LED color values. 
+This Project demonstrates how to use the GPIO Pins for Input and Output. Using bit manipulation students will implement the following:
+	
+* Input: Read button presses.	
+* Output: Assign LED color values. 
 
 
 ## Starter Code Functionality
