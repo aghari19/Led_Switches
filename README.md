@@ -5,6 +5,9 @@ This Project demonstrates how to use the GPIO Pins for Input and Output. Using b
 * Input: Read button presses.	
 * Output: Assign LED color values. 
 
+## Completed Project Description
+The Application will Display a color on the LCD display and that the user must match in-order to generate a new color.   
+
 
 ## Starter Code Functionality
 
