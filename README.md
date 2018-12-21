@@ -23,7 +23,11 @@ The application must use the pushbuttons on both boards to manipulate the Red LE
 * RGB LED on the BoosterXL Off. 
 
 ## Starter Code:
-The Lab 1 starter code implements the following functionality for you
+The Lab 1 starter code implements the following functionality for you:
+* The red LED on the Launchpad is off at the beginning. Pushing and holding down the left button on the Launchpad for the first time turns the red LED on. After releasing the push button, the red LED turns off. In general, holding down the left button turns the LED on and releasing it turns it off.
+* The Red light in the LED2 on the Launchpad is on at the beginning and remains on.
+* The LCD Screen is on and displaying *Color to match: Red*. This will remain until the RGB LED BoosterXL functionality is implemented. 
+
 
 ## Needed Code :
 You will need to add the following functionality to the application for this assignment
@@ -33,5 +37,5 @@ BoosterXL
 
 
 
-"# P1_Draft" 
-"# P1_Draft" 
+
+
