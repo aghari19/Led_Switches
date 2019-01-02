@@ -30,10 +30,21 @@ The Lab 1 starter code implements the following functionality for you:
 
 
 ## Needed Code :
-You will need to add the following functionality to the application for this assignment
+You will need to add the following functionality to the application for this assignment:
 
-Functionality will need to be added to implement the Color Displaying of LED2.
-BoosterXL 
+* Define all of the GPIO pins.
+* Finish the function *LED2Colors(pick.picked)* by adding the following functions:
+	- Picked== Blue : Illuminate only the LED2 Blue on the Launch Pad.
+	- Picked == Green : Illuminate only the LED2 Green on the Launch Pad.
+	- Picked == Orange: Illuminate only the LED2 Orange (Red and Green) Combination on the Launch Pad.
+	- Picked == Purple: Illuminate only the LED2 Purple Combination on the Launch Pad.
+	- Picked == White:  Illuminate only the LED2 White Combination on the Launch Pad.
+
+* Pushing and holding down the right button on the Launchpad turns on the Blue BoosterXL LEDs while turning off the Red LED1. 
+* Pushing and holding down the top button (S1) on the BoosterXL turns the Green LED. When this button is pressed the Red LED 1 is turned off.
+* Pushing and holding down the bottom button (S2) on the BoosterXL turns on the combinations of the RGB LEDs on the BoosterXL board that produces Orange (green and red, hue will vary).
+* Pushing and holding down the left and right buttons on the Launchpad to turn on the combinations of RGB LEDs on the BoosterXL board to produce purple. 
+* Pushing and holding down the top (S1) and bottom (S2) buttons on the of RGB LEDs on the BoosterXL board to produce white.
 
 
 
