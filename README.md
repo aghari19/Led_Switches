@@ -29,7 +29,7 @@ The Lab 1 starter code implements the following functionality for you:
 * The LCD Screen is on and displaying *Color to match: Red*. This will remain until the RGB LED BoosterXL functionality is implemented. 
 
 
-## Needed Code :
+## Needed Code:
 You will need to add the following functionality to the application for this assignment:
 
 * Define all of the GPIO pins.
