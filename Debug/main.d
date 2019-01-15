@@ -54,10 +54,6 @@ main.obj: C:/ti/ccv8/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/linkage.
 main.obj: ../LcdDriver/Crystalfontz128x128_ST7735.h
 main.obj: C:/ti/simplelink_msp432p4_sdk_2_30_00_14/source/ti/grlib/grlib.h
 main.obj: ../colors.h
-main.obj: C:/ti/ccv8/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/stdlib.h
-main.obj: C:/ti/ccv8/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/time.h
-main.obj: C:/ti/ccv8/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/abi_prefix.h
-main.obj: C:/ti/ccv8/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/xlocale/_time.h
 
 ../main.c: 
 C:/ti/simplelink_msp432p4_sdk_2_30_00_14/source/ti/devices/msp432p4xx/driverlib/driverlib.h: 
@@ -113,7 +109,3 @@ C:/ti/ccv8/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/linkage.h:
 ../LcdDriver/Crystalfontz128x128_ST7735.h: 
 C:/ti/simplelink_msp432p4_sdk_2_30_00_14/source/ti/grlib/grlib.h: 
 ../colors.h: 
-C:/ti/ccv8/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/stdlib.h: 
-C:/ti/ccv8/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/time.h: 
-C:/ti/ccv8/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/abi_prefix.h: 
-C:/ti/ccv8/ccsv8/tools/compiler/ti-cgt-arm_18.1.3.LTS/include/xlocale/_time.h: 

@@ -46,7 +46,6 @@ void DisplayFunction(Graphics_Context *g_sContext, drawn_color *pick);
 // Function for matching the displayed colors
 bool colorsMatched(drawn_color *pick);
 
-
 // This function is used to Read the Button input on the LaunchPad and the BoosterXL.
 // From the input combinations, you must produce correct output for the LED1 on the Launchpad and RGB LED on the BoosterXL
 void BoosterLEDColors(drawn_color *pick);
@@ -66,9 +65,9 @@ int main(void) {
     while (1) {
 
 	// Handles LCD printing Functionality
-	 DisplayFunction(&g_sContext, &pick);
+	DisplayFunction(&g_sContext, &pick);
 
-	 // TODO : You must go to this Function and complete it
+	// TODO : You must go to this Function and complete it
 	LED2Colors(pick.picked);
 
 	// TODO : You must go to this Function and complete it
@@ -84,55 +83,75 @@ void LED2Colors(color_selected picked) {
     if(picked == Red) {
 
 	// Ensures only the LED 2  Red light is on.
-	P2OUT = P2OUT | RIGHT_RED;
-	P2OUT = P2OUT & ~RIGHT_GREEN;
-	P2OUT = P2OUT & ~RIGHT_BLUE;
+	P2OUT = P2OUT | RIGHT_RED
+	;
+	P2OUT = P2OUT & ~RIGHT_GREEN
+	;
+	P2OUT = P2OUT & ~RIGHT_BLUE
+	;
     }
     else if(picked == Blue) {
 
 	// TODO: Enable only the LED 2 Blue light
-	P2OUT = P2OUT | RIGHT_BLUE;
-	P2OUT = P2OUT & ~RIGHT_RED;
-	P2OUT = P2OUT & ~RIGHT_GREEN;
+	P2OUT = P2OUT | RIGHT_BLUE
+	;
+	P2OUT = P2OUT & ~RIGHT_RED
+	;
+	P2OUT = P2OUT & ~RIGHT_GREEN
+	;
 
     }
     else if(picked == Green) {
 
 	// TODO:Enable only the LED 2 Green light
-	P2OUT = P2OUT & ~RIGHT_RED;
-	P2OUT = P2OUT & ~RIGHT_BLUE;
-	P2OUT = P2OUT | RIGHT_GREEN;
+	P2OUT = P2OUT & ~RIGHT_RED
+	;
+	P2OUT = P2OUT & ~RIGHT_BLUE
+	;
+	P2OUT = P2OUT | RIGHT_GREEN
+	;
     }
     else if(picked == Purple) {
 
 	// TODO: Enable the LED 2 to display Purple
-	P2OUT = P2OUT | RIGHT_RED;
-	P2OUT = P2OUT | RIGHT_BLUE;
-	P2OUT = P2OUT & ~RIGHT_GREEN;
+	P2OUT = P2OUT | RIGHT_RED
+	;
+	P2OUT = P2OUT | RIGHT_BLUE
+	;
+	P2OUT = P2OUT & ~RIGHT_GREEN
+	;
 
     }
     else if(picked == Orange) {
 
 	// TODO: Enable the LED 2 to display Orange (Don't worry if the LED2 and RGB LED Hue's don't match exactly since we aren't doing color scaling in this assignment.)
-	P2OUT = P2OUT | RIGHT_RED;
-	P2OUT = P2OUT & ~RIGHT_BLUE;
-	P2OUT = P2OUT | RIGHT_GREEN;
-
+	P2OUT = P2OUT | RIGHT_RED
+	;
+	P2OUT = P2OUT & ~RIGHT_BLUE
+	;
+	P2OUT = P2OUT | RIGHT_GREEN
+	;
 
     }
     else if(picked == White) {
 
 	// TODO: Enable the LED 2 to display White
-	P2OUT = P2OUT | RIGHT_RED;
-	P2OUT = P2OUT | RIGHT_BLUE;
-	P2OUT = P2OUT | RIGHT_GREEN;
+	P2OUT = P2OUT | RIGHT_RED
+	;
+	P2OUT = P2OUT | RIGHT_BLUE
+	;
+	P2OUT = P2OUT | RIGHT_GREEN
+	;
     }
     else {
 
 	// TODO: Ensure the LED2 is off
-	P2OUT = P2OUT & ~RIGHT_RED;
-	P2OUT = P2OUT & ~RIGHT_GREEN;
-	P2OUT = P2OUT & ~RIGHT_BLUE;
+	P2OUT = P2OUT & ~RIGHT_RED
+	;
+	P2OUT = P2OUT & ~RIGHT_GREEN
+	;
+	P2OUT = P2OUT & ~RIGHT_BLUE
+	;
     }
 
 }
@@ -141,7 +160,7 @@ void LED2Colors(color_selected picked) {
 void BoosterLEDColors(drawn_color *pick) {
 
     // Left Button is pressed
-    if(((P1IN & LEFT_BUTTON ) == PRESSED) && ((P3IN & S2 ) != PRESSED) && ((P5IN & S1 ) != PRESSED) && ((P1IN & RIGHT_BUTTON ) != PRESSED)) {
+    if(((P1IN & RIGHT_BUTTON ) != PRESSED) && ((P1IN & LEFT_BUTTON ) == PRESSED) && ((P3IN & S2 ) != PRESSED) && ((P5IN & S1 ) != PRESSED)) {
 
 	// Turn off Left LED LaunchPad LED
 	P1OUT = P1OUT & ~LEFT_LED;
@@ -152,9 +171,8 @@ void BoosterLEDColors(drawn_color *pick) {
 	pick->LEDColor = Red;
     }
 
-
     // Right Button is pressed
-    else if((P1IN & RIGHT_BUTTON ) == PRESSED && ((P3IN & S2 ) != PRESSED) && ((P5IN & S1 ) != PRESSED) && ((P1IN & LEFT_BUTTON ) != PRESSED)) {
+    else if((P1IN & RIGHT_BUTTON ) == PRESSED && ((P1IN & LEFT_BUTTON ) != PRESSED) && ((P3IN & S2 ) != PRESSED) && ((P5IN & S1 ) != PRESSED)) {
 
 	// Turn off Left LED LaunchPad LED
 	P1OUT = P1OUT & ~LEFT_LED;
@@ -166,7 +184,7 @@ void BoosterLEDColors(drawn_color *pick) {
     }
 
     // S1 on BoosterXL is pressed and S2 not pressed
-    else if(((P5IN & S1 ) == PRESSED) && ((P3IN & S2 ) != PRESSED) && ((P1IN & RIGHT_BUTTON ) != PRESSED) && ((P1IN & LEFT_BUTTON ) != PRESSED)) {
+    else if(((P1IN & RIGHT_BUTTON ) != PRESSED) && ((P1IN & LEFT_BUTTON ) != PRESSED) && ((P5IN & S1 ) == PRESSED) && ((P3IN & S2 ) != PRESSED)) {
 	// Turn off Left LED LaunchPad LED
 	P1OUT = P1OUT & ~LEFT_LED;
 	// Turn on BoosterXL Green LED
@@ -177,7 +195,7 @@ void BoosterLEDColors(drawn_color *pick) {
     }
 
     // S2 on BoosterXL is pressed, but make sure that S2 is the only button pressed
-    else if(((P3IN & S2 ) == PRESSED) && ((P5IN & S1 ) != PRESSED) && ((P1IN & RIGHT_BUTTON ) != PRESSED) && ((P1IN & LEFT_BUTTON ) != PRESSED)) {
+    else if(((P1IN & RIGHT_BUTTON ) != PRESSED) && ((P1IN & LEFT_BUTTON ) != PRESSED) && ((P3IN & S2 ) == PRESSED) && ((P5IN & S1 ) != PRESSED)) {
 	// Turn off Left LED LaunchPad LED
 	P1OUT = P1OUT & ~LEFT_LED;
 	// Turn on the Red, Blue, and Green BoosterXL LEDs.
@@ -200,7 +218,7 @@ void BoosterLEDColors(drawn_color *pick) {
 	pick->LEDColor = Purple;
     }
     // S1 and S2 Pressed
-    else if(((P5IN & S1 ) == PRESSED) && ((P3IN & S2 ) == PRESSED) && ((P1IN & RIGHT_BUTTON ) != PRESSED) && ((P1IN & LEFT_BUTTON ) != PRESSED)) {
+    else if(((P1IN & RIGHT_BUTTON ) != PRESSED) && (( P1IN & LEFT_BUTTON ) != PRESSED) && (( P5IN & S1 ) == PRESSED) && (( P3IN & S2 ) == PRESSED)) {
 	// Turn off Left LED LaunchPad LED
 	P1OUT = P1OUT & ~LEFT_LED;
 	//
@@ -221,8 +239,6 @@ void BoosterLEDColors(drawn_color *pick) {
     }
 }
 
-
-
 // Initialization part is always device dependent and therefore does not change much with HAL
 void initialize(Graphics_Context *g_sContext, drawn_color *pick) {
 
@@ -234,9 +250,12 @@ void initialize(Graphics_Context *g_sContext, drawn_color *pick) {
     P1DIR |= LEFT_LED;
 
     //P2 LED
-    P2DIR |= RIGHT_RED;
-    P2DIR |= RIGHT_GREEN;
-    P2DIR |= RIGHT_BLUE;
+    P2DIR |= RIGHT_RED
+    ;
+    P2DIR |= RIGHT_GREEN
+    ;
+    P2DIR |= RIGHT_BLUE
+    ;
 
     //BoosterXL LEDs
     P2DIR |= BOOST_RED;
@@ -251,24 +270,24 @@ void initialize(Graphics_Context *g_sContext, drawn_color *pick) {
     P1DIR = ~ RIGHT_BUTTON;
 
     //Booster XL
-    P3DIR = ~ S1;
-    P5DIR = ~ S2;
+    P5DIR = ~ S1;
+    P3DIR = ~ S2;
 
     // write 1 to the PxREB for the bit you want
     P1REN |= LEFT_BUTTON;
     P1REN |= RIGHT_BUTTON;
 
     //BoosterXL
-    P3REN |= S1;
-    P5REN |= S2;
+    P5REN |= S1;
+    P3REN |= S2;
 
     // write 1 to the PxOUT
     P1OUT |= LEFT_BUTTON;
     P1OUT |= RIGHT_BUTTON;
 
     //BoosterXL
-    P3OUT |= S1;
-    P5OUT |= S2;
+    P5OUT |= S1;
+    P3OUT |= S2;
 
     // No Need for Students to modify Code beyond this point to finish the project
     // Initial Color Pick
@@ -276,8 +295,8 @@ void initialize(Graphics_Context *g_sContext, drawn_color *pick) {
 
     // Initialize the graphics
     InitGraphics(g_sContext);
-    Graphics_drawString(g_sContext, pick->colorText, -1, 10, 70, true);
-
+    Graphics_drawString(g_sContext, pick->colorText, -1, 10, 60, true);
+    Graphics_drawString(g_sContext, pick->buttonText, -1, 10, 100, true);
 }
 
 // Initializes the LCD screen graphics
@@ -291,7 +310,8 @@ void InitGraphics(Graphics_Context *g_sContext) {
     InitFonts();
     Graphics_setFont(g_sContext, &g_sFontCmss18b);
     Graphics_clearDisplay(g_sContext);
-    Graphics_drawString(g_sContext, "Color to match: ", -1, 5, 40, true);
+    Graphics_drawString(g_sContext, "Color to match: ", -1, 5, 30, true);
+    Graphics_drawString(g_sContext, "Press: ", -1, 5, 80, true);
 }
 
 //Initialize screen fonts
@@ -301,21 +321,28 @@ void InitFonts() {
 }
 
 // Function takes care of Matching  colors and displaying color word text
-void DisplayFunction(Graphics_Context *g_sContext, drawn_color *pick){
+void DisplayFunction(Graphics_Context *g_sContext, drawn_color *pick) {
     // If the colors have matched move on move this section into a function of it's own
-    	if(colorsMatched(pick)) {
-    	    RandomColor(pick);
-    	    // print inside here
-    	    Graphics_setForegroundColor(g_sContext, GRAPHICS_COLOR_BLUE);
-    	    Graphics_Rectangle R;
-    	    R.xMax = 128;
-    	    R.yMax = 90;
-    	    R.xMin = 0;
-    	    R.yMin = 60;
-    	    Graphics_fillRectangle(g_sContext,&R);
-    	    Graphics_setForegroundColor(g_sContext, GRAPHICS_COLOR_YELLOW);
-    	    Graphics_drawString(g_sContext, pick->colorText, -1, 10, 70, true);
-    	}
+    if(colorsMatched(pick)) {
+	SelectColor(pick);
+	// print inside here
+	Graphics_setForegroundColor(g_sContext, GRAPHICS_COLOR_BLUE);
+	Graphics_Rectangle R1;
+	R1.xMax = 128;
+	R1.yMax = 80;
+	R1.xMin = 0;
+	R1.yMin = 50;
+	Graphics_fillRectangle(g_sContext, &R1);
+	Graphics_Rectangle R2;
+	R2.xMax = 128;
+	R2.yMax = 100;
+	R2.xMin = 0;
+	R2.yMin = 120;
+	Graphics_fillRectangle(g_sContext, &R2);
+	Graphics_setForegroundColor(g_sContext, GRAPHICS_COLOR_YELLOW);
+	Graphics_drawString(g_sContext, pick->colorText, -1, 10, 60, true);
+	Graphics_drawString(g_sContext, pick->buttonText, -1, 10, 100, true);
+    }
 }
 
 // Function determines if the randomly color displayed on the LCD  matches the color generated by the LCD
