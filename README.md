@@ -21,12 +21,13 @@ The application must use the pushbuttons on both boards to manipulate the Red LE
 * LED1 on Launchpad on
 * LED2 on Launchpad RED
 * RGB LED on the BoosterXL Off. 
+The Application will need to cycle through the Color list in the order Red, Blue, Green, Purple, Orange, then White. 
 
 ## Starter Code:
 The Lab 1 starter code implements the following functionality for you:
 * The red LED on the Launchpad is off at the beginning. Pushing and holding down the left button on the Launchpad for the first time turns the red LED on. After releasing the push button, the red LED turns off. In general, holding down the left button turns the LED on and releasing it turns it off.
 * The Red light in the LED2 on the Launchpad is on at the beginning and remains on.
-* The LCD Screen is on and displaying *Color to match: Red*. This will remain until the RGB LED BoosterXL functionality is implemented. 
+* The LCD Screen is on and displaying *Color to match: Red Press: L1*. This will remain until the RGB LED BoosterXL functionality is implemented. 
 
 
 ## Needed Code:
