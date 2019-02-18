@@ -15,7 +15,7 @@
 #define LEFT_BUTTON BIT1      // P1.1
 #define LEFT_LED BIT0         // P1.0
 
-// The bitmask of the right Launchpad Board button
+// The bitmask of the right Launchpad Board buttons (S1 and S2)
 
 #define RIGHT_BUTTON BIT4      //P1.4
 #define LRED_LED BIT0          //P2.0
